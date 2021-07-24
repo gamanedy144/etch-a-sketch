@@ -21,21 +21,22 @@ body {
     font-size: 0;
 }
 .grid-row {
-    border: 1px solid black;
+    border: 0.1px solid black;
     position: absolute;
 }
 .cell{
     background-color: white;
-    border: 1px solid gray;
+    border: 0.1px solid gray;
     width: 20px;
     height: 20px;
     display: inline-block;
     /* margin-right: 2px; */
 }
-.square {
+
+/* .square {
     background-color: white;
     border-style: solid;
     border-width: 0.5px; 
     width: 50px;
     height: 50px;
-}
+} */

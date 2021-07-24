@@ -1,7 +1,7 @@
 const container = document.querySelector('#grid-container');
 let rows = document.getElementsByClassName('gridRow');
 let cells = document.getElementsByClassName('cell');
-
+let trigger = false;
 let squareDiv = document.createElement('div');
 squareDiv.classList.add('square');
 let squareRow = document.createElement('div');
@@ -17,12 +17,8 @@ function makeColumns (colNum){
     for(let i = 0; i < rows.length; i++){
         for(let j = 0; j < colNum; j++){
             let newCell = document.createElement('div');
-            newCell.addEventListener('click', () =>{
-                newCell.style.textCSS = "background-color: black;"
-                console.log(j + " " + i);
-            });
             rows[j].appendChild(newCell).className = "cell";
-            
+            addEventToCell(newCell);
         }
     }
 }
@@ -33,8 +29,25 @@ function defaultGrid(){
 }
 defaultGrid();
 
+let cellArray = document.querySelectorAll(".cell");
+cellArray.forEach(function(e){
+    e.addEventListener("mouseenter", function(e){
+        e.preventDefault();
+        if(trigger == true){
+            this.style.backgroundColor = "black";
+        }
+    })
+})
+document.addEventListener('mousedown', function(){
+    trigger = true;
+})
+document.addEventListener('mouseup', function(){
+    trigger = false;
+})
+
+
 function addEventToCell(cell){
     cell.addEventListener('mousedown', () =>{
-        cell.style.textCSS = "background-color: black;"
+        cell.style.backgroundColor = "black";
     })
 }
