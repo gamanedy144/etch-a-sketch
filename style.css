@@ -6,6 +6,7 @@
 :root {
     --grid-cols: 1;
     --grid-rows: 1;
+    --some-color: black;
 }
 body {
     min-height: 100vh;
@@ -51,7 +52,9 @@ body {
 .dark-cell{
     background-color: black;
 }
-
+.color-cell{
+    background-color: var(--some-color);
+}
 /* .square {
     background-color: white;
     border-style: solid;
